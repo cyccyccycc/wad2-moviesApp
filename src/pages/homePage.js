@@ -10,6 +10,7 @@ const MovieListPage = () => {
       setMovies(movies);
     });
   }, []);
+  
 
   const addToFavorites = movieId => {
     setMovies(movies => {
@@ -29,5 +30,6 @@ const MovieListPage = () => {
       />
   );
 };
+
 
 export default MovieListPage;
