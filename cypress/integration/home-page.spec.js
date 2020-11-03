@@ -54,9 +54,15 @@ describe("Home Page ", () => {
           .should("have.text", matchingMovies[index].title);
         })
       })
+      it("should display there are no movies with this words in the title", () => {
+        const searchString = "xyz";
+        const matchingMovies = filterByTitle(movies, searchString);
+        cy.get("input").clear().type(searchString);
+        cy.get(matchingMovies.length).should("have.length", 0);
+        })
+      })
     })
     describe("By movie genre" ,() => {
       // More later
     })
   })
-});
