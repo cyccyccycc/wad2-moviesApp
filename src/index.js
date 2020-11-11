@@ -8,13 +8,17 @@ import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import UpcomingMoviePage from "./pages/UpcomingMoviePage";
+import MoviesContextProvider from "./contexts/moviesContext";
+import GenresContextProvider from "./contexts/genresContext";
 
 const App = () => {
   return (
-      <BrowserRouter>
-        <div className="jumbotron">
-          <SiteHeader />      {/* New Header  */}
-          <div className="container-fluid">
+    <BrowserRouter>
+      <div className="jumbotron">
+        <SiteHeader /> 
+        <div className="container-fluid">
+          <MoviesContextProvider>
+            <GenresContextProvider>    {/* NEW */}
         <Switch>
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route exact path="/movies/upcoming" component={UpcomingMoviePage} />
@@ -23,9 +27,11 @@ const App = () => {
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
         </Switch>
+        </GenresContextProvider>    {/* NEW */}
+          </MoviesContextProvider>
+        </div>
       </div>
-    </div>
-  </BrowserRouter>
+    </BrowserRouter>
   );
 };
 
