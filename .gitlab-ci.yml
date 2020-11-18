@@ -36,7 +36,7 @@ bundle_app:
     paths:
       - build/
 
-      build_jobX:
+build_jobX:
   stage: build
   only:
     - demobranch
