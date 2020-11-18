@@ -30,9 +30,9 @@ describe("Navigation", () => {
       cy.visit("/");
     });
     it("should navigate to the movie details page and change browser URL", () => {
-      cy.get(".card").eq(1).find("img").click();
-      cy.url().should("include", `/movies/${movies[1].id}`);
-      cy.get("h2").contains(movies[1].title);
+      cy.get(".card").eq(0).find("img").click();
+      cy.url().should("include", `/movies/${movies[0].id}`);
+      cy.get("h2").contains(movies[0].title);
     });
     it("should allow navigation from site header", () => {
       cy.get("nav").find("li").eq(2).find("a").click();
@@ -40,7 +40,7 @@ describe("Navigation", () => {
       cy.get("h2").contains("Favorite Movies");
       cy.get("nav").find("li").eq(1).find("a").click();
       cy.url().should("not.include", `/favorites`);
-      cy.get("h2").contains("Discover Movies");
+      cy.get("h2").contains("Upcoming Movies");
       cy.get("nav").find("li").eq(2).find("a").click();
       cy.get("nav.navbar-brand").find("a").click();
       cy.url().should("not.include", `/favorites`);
