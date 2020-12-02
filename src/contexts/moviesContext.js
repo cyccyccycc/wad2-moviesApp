@@ -1,5 +1,5 @@
 import React, { useEffect, createContext, useReducer } from "react";
-import { getMovies, getUpcomingMovie } from "../api/tmdb-api";
+import { getMovies, getUpcomingMovie,getnowplaying } from "../api/tmdb-api";
 
 export const MoviesContext = createContext(null);
 
@@ -23,6 +23,8 @@ const reducer = (state, action) => {
       return { movies: action.payload.movies, upcoming: [...state.upcoming] };
     case "load-upcoming":
       return { upcoming: action.payload.movies, movies: [...state.movies] };
+      case "load-nowplaying":
+      return { nowplaying: action.payload.movies, movies: [...state.movies] };
     case "add-review":
       return {
         movies: state.movies.map((m) =>
@@ -67,11 +69,19 @@ const MoviesContextProvider = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    getnowplaying().then((movies) => {
+      dispatch({ type: "load-nowplaying", payload: { movies } });
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <MoviesContext.Provider
       value={{
         movies: state.movies,
         upcoming: state.upcoming,
+        nowplaying: state.nowplaying,
         addToFavorites: addToFavorites,
         addReview: addReview,
         addToWatchList:addToWatchList
