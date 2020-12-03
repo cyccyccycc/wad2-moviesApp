@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
 import PageTemplate from '../components/templateMovieListPage'
 import {MoviesContext} from '../contexts/moviesContext'
-import AddToListButton from '../components/buttons/addtolist'
+import AddToListButton from '../components/buttons/addTolist'
 
 const NowPlayingPage = () => {
   const context = useContext(MoviesContext);
-  const movies = context.nowplaying.filter((m) => {  // New
+  const movies = context.nowplaying.filter((m) => { 
     return !("list" in m);
   });
  
