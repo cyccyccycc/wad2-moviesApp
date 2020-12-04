@@ -8,10 +8,11 @@ import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
 import MovieReviewPage from "./pages/movieReviewPage";
 import SiteHeader from './components/siteHeader'
 import UpcomingMoviePage from "./pages/UpcomingMoviePage";
+import NowPlayingPage from "./pages/NowPlayingPage";
 import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage'
-import NowPlayingPage from "./pages/NowPlayingPage";
+
 
 const App = () => {
   return (

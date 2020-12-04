@@ -1,20 +1,23 @@
-import React, { useContext } from "react";
+import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templateMovieListPage'
-import {MoviesContext} from '../contexts/moviesContext'
-import AddToListButton from '../components/buttons/addTolist'
+import {getnowplaying} from"../api/tmdb-api";
+import ffff from '../components/buttons/ffff'
 
 const NowPlayingPage = () => {
-  const context = useContext(MoviesContext);
-  const movies = context.nowplaying.filter((m) => { 
-    return !("list" in m);
-  });
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    getnowplaying().then(movies => {
+      setMovies(movies);
+    });
+
+  }, []);
  
   return (
     <PageTemplate
       title='NowPlaying Movies'
       movies={movies}
       action={(movie) => {
-        return <AddToListButton movie={movie} />
+        return <ffff movie={movie} />
       }}
     />
   );
