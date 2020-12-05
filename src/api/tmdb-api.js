@@ -42,9 +42,9 @@ export const getMovies = () => {
       .then(res => res.json())
       .then(json => json.results);
   };
-  export const getsimilar = () => {
+  export const getpeopledetails = () => {
     return fetch(
-      `https://api.themoviedb.org/3/movie/{movie_id}/similar?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
       .then(res => res.json())
       .then(json => json.results);
