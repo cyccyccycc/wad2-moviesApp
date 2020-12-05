@@ -1,5 +1,5 @@
 import React from "react";
-import "./peopleDetails.css";
+import "./peopledetails.css";
 
 export default ({ people }) => {
   return (
@@ -11,13 +11,13 @@ export default ({ people }) => {
         birthday
         </li>
         <li key="bir" className="list-group-item ">
-          {movie.birthday}
+          {people.birthday}
         </li>
         <li key="kno" className="list-group-item list-group-item-dark">
         known_for_department
         </li>
         <li key="kno" className="list-group-item ">
-          {movie.known_for_department}
+          {people.known_for_department}
         </li>
       </ul>
 
@@ -26,7 +26,7 @@ export default ({ people }) => {
           biography
         </li>
         <li key="kno" className="list-group-item ">
-          {movie.biography}
+          {people.biography}
         </li>
       </ul>
       <ul className="list-group list-group-horizontal">
@@ -34,7 +34,7 @@ export default ({ people }) => {
          popularity
         </li>
         <li key="kno" className="list-group-item ">
-          {movie.popularity}
+          {people.popularity}
         </li>
       </ul>
       <ul className="list-group list-group-horizontal">
@@ -42,7 +42,7 @@ export default ({ people }) => {
         place_of_birth
         </li>
         <li key="kno" className="list-group-item ">
-          {movie.place_of_birth}
+          {people.place_of_birth}
         </li>
       </ul>
     </>
