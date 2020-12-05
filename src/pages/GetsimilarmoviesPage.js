@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templateMovieListPage'
-import {getnowplaying} from"../api/tmdb-api";
+import {getsimilar} from"../api/tmdb-api";
 import Getsimilarmovies from '../components/buttons/Getsimilarmovies'
-
-const NowPlayingPage = () => {
+const GetsimilarmoviesPage = () => {
   const [movies, setMovies] = useState([]);
   useEffect(() => {
-    getnowplaying().then(movies => {
+    getsimilar().then(movies => {
       setMovies(movies);
     });
 
@@ -14,7 +13,7 @@ const NowPlayingPage = () => {
  
   return (
     <PageTemplate
-      title='NowPlaying Movies'
+      title='GetSimilar Movies'
       movies={movies}
       action={(movie) => {
         return <Getsimilarmovies movie={movie} />
@@ -24,4 +23,4 @@ const NowPlayingPage = () => {
 };
   
   
-export default NowPlayingPage;
+export default GetsimilarmoviesPage;
