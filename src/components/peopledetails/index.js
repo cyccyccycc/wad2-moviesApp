@@ -5,19 +5,19 @@ export default ({ people }) => {
   return (
     <>
       <h4>Overview</h4>
-      <p>{people.homepage}</p>
+      <p>{people.overview}</p>
       <ul className="list-group list-group-horizontal">
         <li key="bir" className="list-group-item list-group-item-dark">
-        birthday
+        release_date
         </li>
         <li key="bir" className="list-group-item ">
-          {people.birthday}
+          {people.release_date}
         </li>
         <li key="kno" className="list-group-item list-group-item-dark">
-        known_for_department
+        vote_average
         </li>
         <li key="kno" className="list-group-item ">
-          {people.known_for_department}
+          {people.vote_average}
         </li>
       </ul>
 

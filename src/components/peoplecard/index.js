@@ -1,12 +1,14 @@
 import React from "react";
 import "./peopleCard.css";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../globals/fontawesome";
 
-const PeopleCard = props => {
+const peopleCard = props => {
   return (
     <div className="col-sm-3">
       <div className="card  bg-white">
+      <Link to={`/people/${props.people.id}`}>
         <img
           className="card-img-tag center "
           alt={props.people.id}
@@ -16,11 +18,12 @@ const PeopleCard = props => {
               : "./film-poster-placeholder.png"
           }
         />
+         </Link>
         <div className="card-body">
           <h4 className="card-title ">{props.people.id}</h4>
           <p>
             <FontAwesomeIcon icon={["fas", "calendar"]} />
-            <span> {props.people.birthday}</span>
+            <span> {props.people.adult}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
@@ -28,15 +31,7 @@ const PeopleCard = props => {
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.people.gender}</span>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.people.place_of_birth}</span>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.people.biography}</span>
+            <span> {props.people.popularity}</span>
           </p>
         </div>
       </div>
@@ -44,4 +39,4 @@ const PeopleCard = props => {
   );
 };
 
-export default MovieCard ;
+export default peopleCard ;

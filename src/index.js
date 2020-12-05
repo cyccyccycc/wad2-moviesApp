@@ -25,7 +25,6 @@ const App = () => {
         <Switch>
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
-          <Route path="/people/:id" component={MovieReviewPage} />
           <Route path="/people" component={peoplePage} />
           <Route path="/people/:id" component={peopledetailsPage} />
           <Route path="/movies/upcoming" component={UpcomingMoviePage} />

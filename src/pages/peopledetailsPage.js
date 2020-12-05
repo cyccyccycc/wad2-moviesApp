@@ -1,8 +1,16 @@
-import React from "react";
+import React, {useState, useEffect}  from "react";
 import PeopleHeader from "../components/peopleheader";
 import Peopledetails from "../components/peopledetails";
+import {getpeopledetail} from '../api/tmdb-api'
+const peopledetailsPage = props => {
+  const { id } = props.match.params
+  const [people, setPeople] = useState(null)
+  useEffect(() => {
+    getpeopledetail(id).then(people => {
+      setPeople(people);
+    });
+  }, [id]);
 
-const peopledetailsPage = ({ people }) => {
   return (
     <>
       {people ? (
@@ -26,7 +34,7 @@ const peopledetailsPage = ({ people }) => {
           </div>
         </>
         ) : (
-        <p>Waiting for movie details</p>
+        <p>Waiting for people details</p>
       )}
     </>
   );

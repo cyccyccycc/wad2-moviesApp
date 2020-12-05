@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import PageTemplate from '../components/templateMovieListPage'
 import {getnowplaying} from"../api/tmdb-api";
-import Getsimilarmovies from '../components/buttons/Getsimilarmovies'
+import Getpeoplebuttom from '../components/buttons/Getpeoplebuttom'
 
 const NowPlayingPage = () => {
   const [movies, setMovies] = useState([]);
@@ -17,7 +17,7 @@ const NowPlayingPage = () => {
       title='NowPlaying Movies'
       movies={movies}
       action={(movie) => {
-        return <Getsimilarmovies movie={movie} />
+        return <Getpeoplebuttom movie={movie} />
       }}
     />
   );
