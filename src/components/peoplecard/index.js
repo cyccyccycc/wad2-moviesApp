@@ -5,6 +5,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../globals/fontawesome";
 
 const peopleCard = ({people}) => {
+  const handleAddFavorites = e => {
+    e.preventDefault()
+    people.buttonHandler(people.id)
+  }
   return (
     <div className="col-sm-3">
       <div className="card  bg-white">
@@ -30,6 +34,13 @@ const peopleCard = ({people}) => {
             <FontAwesomeIcon icon={["fas", "star"]} />
             <span> {people.popularity}</span>
           </p>
+          <div className="card-footer">
+          <button type="button" className="btn w-100 btn-primary"
+                onClick={handleAddFavorites}
+                >
+            Add to Favorites
+          </button>
+        </div>
         </div>
       </div>
     </div>

@@ -12,4 +12,5 @@ class StubAPI {
     }
 }
 
+
 export default new StubAPI();

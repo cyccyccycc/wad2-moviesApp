@@ -15,6 +15,7 @@ import MoviesContextProvider from "./contexts/moviesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import peoplePage from './pages/peoplePage';
+import FavoritePeoplesPage from './pages/favoritesPeoplesPage'
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
             <GenresContextProvider>    {/* NEW */}
         <Switch>
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
+        <Route exact path="/peoples/favorites" component={FavoritePeoplesPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route path="/people" component={peoplePage} />
           <Route path="/translations/:id" component={PeopleTranslationPage} />
