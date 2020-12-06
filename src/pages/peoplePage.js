@@ -5,11 +5,11 @@ import { getpeople } from "../api/tmdb-api";
 
 
 
-const peoplePage = () => {
+const PeoplePage = () => {
   const [peoples, setPeoples] = useState([]);
   useEffect(() => {
     getpeople().then(peoples => {
-      setMovies(peoples);
+      setPeoples(peoples);
     });
   }, []);
   return (
@@ -19,4 +19,4 @@ const peoplePage = () => {
     </>
   );
 }
-export default peoplePage;
+export default PeoplePage;

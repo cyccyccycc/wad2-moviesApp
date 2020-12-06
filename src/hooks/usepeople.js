@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
-import {getpeople} from '../api/tmdb-api'
+import {getpeopledetail} from '../api/tmdb-api'
 
-const usepeople = id => {
-  const [people, setpeople] = useState(null);
+const usePeople = id => {
+  const [people, setPeople] = useState(null);
   useEffect(() => {
-    getpeople(id).then(people => {
-      setMovie(people);
+    getpeopledetail(id).then(people => {
+      setPeople(people);
     });
   }, [id]);
-  return [people, setpeople];
+  return [people, setPeople];
 };
 
-export default usepeople
+export default usePeople

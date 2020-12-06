@@ -2,11 +2,11 @@ import React from "react";
 import People from "../peoplecard/";
 import "./peopleList.css";
 
-const peopleList = props => {
-  const peoplecards = props.people.map(m => (
-    <People key={m.id} people={m} />
+const PeopleList = ({peoples, action}) => {
+  const peoplecards = peoples.map(m => (
+    <People key={m.id} people={m} action={action} />
   ));
   return <div className="row movies bg-info">{peoplecards}</div>;
 };
 
-export default peopleList;
+export default PeopleList;

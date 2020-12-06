@@ -2,7 +2,9 @@ import React, {useState, useEffect}  from "react";
 import PeopleHeader from "../components/peopleheader";
 import Peopledetails from "../components/peopledetails";
 import {getpeopledetail} from '../api/tmdb-api'
-const peopledetailsPage = props => {
+
+
+const PeopledetailsPage = props => {
   const { id } = props.match.params
   const [people, setPeople] = useState(null)
   useEffect(() => {
@@ -20,8 +22,8 @@ const peopledetailsPage = props => {
             <div className="col-3">
               <img
                 src={
-                  people.poster_path
-                    ? `https://image.tmdb.org/t/p/w500/${people.poster_path}`
+                  people.profile_path
+                    ? `https://image.tmdb.org/t/p/w500/${people.profile_path}`
                     : "./film-poster-placeholder.png"
                 }
                 className="people"
@@ -40,4 +42,4 @@ const peopledetailsPage = props => {
   );
 };
 
-export default peopledetailsPage;
+export default PeopledetailsPage;
