@@ -4,39 +4,31 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "../../globals/fontawesome";
 
-const peopleCard = props => {
+const peopleCard = ({people}) => {
   return (
     <div className="col-sm-3">
       <div className="card  bg-white">
-      <Link to={`/people/${props.people.id}`}>
+      <Link to={`/people/${people.id}`}>
         <img
           className="card-img-tag center "
-          alt={props.people.name}
+          alt={people.name}
           src={
-            props.people.profile_path
-              ? `https://image.tmdb.org/t/p/w500/${props.people.profile_path}`
+            people.profile_path
+              ? `https://image.tmdb.org/t/p/w500/${people.profile_path}`
               : "./film-poster-placeholder.png"
           }
         />
          </Link>
         <div className="card-body">
-          <h4 className="card-title ">{props.people.name}</h4>
+          <h4 className="card-title ">{people.name}</h4>
+        
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span>
-               {props.people.original_language}</span>
+            <span> {people.name}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.people.name}</span>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.people.popularity}</span>
-          </p>
-          <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {props.people.profile_path}</span>
+            <span> {people.popularity}</span>
           </p>
         </div>
       </div>

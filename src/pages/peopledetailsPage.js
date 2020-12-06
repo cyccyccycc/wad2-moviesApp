@@ -1,21 +1,15 @@
-import React, {useState, useEffect}  from "react";
+import React  from "react";
+import { Link, Route, withRouter } from "react-router-dom";
 import PeopleHeader from "../components/peopleheader";
 import Peopledetails from "../components/peopledetails";
-import {getpeopledetail} from '../api/tmdb-api'
+import usePeople from "../hooks/usepeople";
 
-
-const PeopledetailsPage = props => {
-  const { id } = props.match.params
-  const [people, setPeople] = useState(null)
-  useEffect(() => {
-    getpeopledetail(id).then(people => {
-      setPeople(people);
-    });
-  }, [id]);
+const DetailsPage = props => {
+  const { id } = props.match.params;
+  const [people] = usePeople(id)  // NEW
 
   return (
-    <>
-      {people ? (
+
         <>
           <PeopleHeader people={people} />
           <div className="row">
@@ -35,11 +29,9 @@ const PeopledetailsPage = props => {
             </div>
           </div>
         </>
-        ) : (
-        <p>Waiting for people details</p>
-      )}
-    </>
-  );
+        ) 
+
+
 };
 
-export default PeopledetailsPage;
+export default withRouter(DetailsPage);
