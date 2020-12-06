@@ -1,11 +1,15 @@
 import React, { useState } from "react";
-import Header from "../peopleheader";
+import Header from "../headerMovieList";
 import PeopleList from "../peopleList";
+import FilterControls from "../filterControls";
 
-const peopleListPageTemplate = ({peoples, id, buttonHandler}) => {
-  let displayedPeoples = peoples
+const PeopleListPageTemplate = ({movies, title, buttonHandler}) => {
+  const [nameFilter, setNameFilter] = useState("");
+  const [genreFilter, setGenreFilter] = useState("0");
+  const genre = Number(genreFilter)
+  let displayedPeoples = people
     .filter(m => {
-      return m.id.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
+      return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     })
     .filter(m => {
       return  genre > 0
@@ -22,12 +26,12 @@ const peopleListPageTemplate = ({peoples, id, buttonHandler}) => {
     <>
       <Header title={title} numMovies={displayedMovies.length} />
       <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/>
-      <MovieList
+      <PeopleList
         buttonHandler={buttonHandler}
-        movies={displayedMovies}
-      ></MovieList>
+        peoples={displayedPeoples}
+      ></PeopleList>
     </>
   );
 };
 
-export default peopleListPageTemplate ;
+export default PeopleListPageTemplate ;

@@ -4,9 +4,10 @@ import { BrowserRouter, Route, Redirect, Switch } from "react-router-dom"    // 
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import HomePage from "./pages/homePage";
 import MoviePage from './pages/movieDetailsPage';
-import DetailsPage from './pages/peopledetailsPage';
+import PeoplePage from './pages/peopledetailsPage'
 import FavoriteMoviesPage from './pages/favoritesMoviesPage'       // NEW
 import MovieReviewPage from "./pages/movieReviewPage";
+import PeopleTranslationPage from "./pages/peopleTranslationPage";
 import SiteHeader from './components/siteHeader'
 import UpcomingMoviePage from "./pages/UpcomingMoviePage";
 import NowPlayingPage from "./pages/NowPlayingPage";
@@ -27,11 +28,12 @@ const App = () => {
         <Route exact path="/reviews/form" component={AddMovieReviewPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route path="/people" component={peoplePage} />
-          <Route path="/people/:id" component={DetailsPage} />
+          <Route path="/translations/:id" component={PeopleTranslationPage} />
           <Route path="/movies/upcoming" component={UpcomingMoviePage} />
           <Route path="/movies/nowplaying" component={NowPlayingPage} />
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route path="/movies/:id" component={MoviePage} />
+          <Route path="/peoples/:id" component={PeoplePage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
         </Switch>

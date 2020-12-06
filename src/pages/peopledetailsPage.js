@@ -1,49 +1,46 @@
-import React from "react";
-import { Link, Route, withRouter } from "react-router-dom";
+import React, {useState, useEffect}  from "react";
+import PeopleHeader from "../components/peopleheader";
 import PeopleDetails from "../components/peopledetails";
-import PageTemplate from "../components/templateMoviePage";
-import PeopleTranslations from "../components/peopleTranslations";
-import usePeople from "../hooks/usepeople";
 
-const PeopledetailsPage = props => {
-  const { id } = props.match.params;
-  const [people] = usePeople(id)  // NEW
+
+const PeoplePage = props => {
+  const { id } = props.match.params
+  const [people, setPeople] = useState(null)
+  useEffect(() => {
+    fetch(
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then(res => res.json())    
+    .then(people => {
+      setPeople(people);
+    })
+  }, [id])
   return (
     <>
-    {people ? (
-      <>
-        <PageTemplate people={people}>
-          <PeopleDetails people={people} />
-        </PageTemplate>
-        <div className="row">
-          <div className="col-12 ">
-            {!props.history.location.pathname.endsWith("/translations") ? (
-              <Link
-                className="btn btn-primary btn-block active"
-                to={`/peoples/${id}/translations`}
-              >
-                Show Translations (Extracts)
-              </Link>
-            ) : (
-              <Link
-                className="btn btn-primary btn-block active"
-                to={`/peoples/${id}`}
-              >
-                Hide Translations 
-              </Link>
-            )}
+      {people ? (
+        <>
+          <PeopleHeader people={people} />
+          <div className="row">
+            <div className="col-3">
+              <img
+                src={
+                  people.profile_path
+                    ? `https://image.tmdb.org/t/p/w500/${people.profile_path}`
+                    : "./film-poster-placeholder.png"
+                }
+                className="people"
+                alt={people.name}
+              />
+            </div>
+            <div className="col-9">
+              <PeopleDetails people={people} />
+            </div>
           </div>
-        </div>
-        <Route
-          path={`/peoples/:id/translations`}
-          render={props => <PeopleTranslations people={people} {...props} />}
-        />
-      </>
-    ) : (
-      <p>Waiting for people details</p>
-    )}
-  </>
+        </>
+        ) : (
+        <p>Waiting for people details</p>
+      )}
+    </>
   );
 };
 
-export default withRouter(PeopledetailsPage);
+export default PeoplePage;
