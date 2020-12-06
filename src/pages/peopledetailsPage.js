@@ -1,46 +1,24 @@
-import React, {useState, useEffect}  from "react";
-import PeopleHeader from "../components/peopleheader";
+import React from "react";
+import { withRouter } from "react-router-dom";
 import PeopleDetails from "../components/peopledetails";
-
-
+import PageTemplate from "../components/templatePeoplePage";
+import usePeople from "../hooks/usePeople";
 const PeoplePage = props => {
-  const { id } = props.match.params
-  const [people, setPeople] = useState(null)
-  useEffect(() => {
-    fetch(
-      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
-    ).then(res => res.json())    
-    .then(people => {
-      setPeople(people);
-    })
-  }, [id])
+  const { id } = props.match.params;
+  const [people] = usePeople(id) 
   return (
     <>
-      {people ? (
-        <>
-          <PeopleHeader people={people} />
-          <div className="row">
-            <div className="col-3">
-              <img
-                src={
-                  people.profile_path
-                    ? `https://image.tmdb.org/t/p/w500/${people.profile_path}`
-                    : "./film-poster-placeholder.png"
-                }
-                className="people"
-                alt={people.name}
-              />
-            </div>
-            <div className="col-9">
-              <PeopleDetails people={people} />
-            </div>
-          </div>
-        </>
-        ) : (
-        <p>Waiting for people details</p>
-      )}
-    </>
+    {people ? (
+      <>
+        <PageTemplate people={people}>
+          <PeopleDetails people={people} />
+        </PageTemplate>
+      </>
+    ) : (
+      <p>Waiting for people details</p>
+    )}
+  </>
   );
 };
 
-export default PeoplePage;
+export default withRouter(PeoplePage);

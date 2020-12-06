@@ -4,23 +4,16 @@ import "./peopledetails.css";
 export default ({ people }) => {
   return (
     <>
-      <h4>Overview</h4>
-      <p>{people.overview}</p>
+      <h4>also_known_as</h4>
+      <p>{people.also_known_as}</p>
       <ul className="list-group list-group-horizontal">
         <li key="bir" className="list-group-item list-group-item-dark">
-        release_date
+        place_of_birth
         </li>
         <li key="bir" className="list-group-item ">
-          {people.release_date}
-        </li>
-        <li key="kno" className="list-group-item list-group-item-dark">
-        vote_average
-        </li>
-        <li key="kno" className="list-group-item ">
-          {people.vote_average}
+          {people.place_of_birth}
         </li>
       </ul>
-
       <ul className="list-group list-group-horizontal">
         <li key="gh" className="list-group-item list-group-item-dark">
           biography
@@ -43,6 +36,30 @@ export default ({ people }) => {
         </li>
         <li key="kno" className="list-group-item ">
           {people.place_of_birth}
+        </li>
+      </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="pch" className="list-group-item list-group-item-dark">
+        homepage
+        </li>
+        <li key="kno" className="list-group-item ">
+          {people.homepage}
+        </li>
+      </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="pch" className="list-group-item list-group-item-dark">
+        known_for_department
+        </li>
+        <li key="kno" className="list-group-item ">
+          {people.known_for_department}
+        </li>
+      </ul>
+      <ul className="list-group list-group-horizontal">
+        <li key="pch" className="list-group-item list-group-item-dark">
+        deathday
+        </li>
+        <li key="kno" className="list-group-item ">
+          {people.deathday}
         </li>
       </ul>
     </>

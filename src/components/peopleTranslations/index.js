@@ -15,24 +15,24 @@ export default ({ people }) => {
     <table className="table table-striped table-bordered table-hover">
       <thead>
         <tr>
-          <th scope="col">Name</th>
+          <th scope="col">Author</th>
           <th scope="col">Excerpt</th>
           <th scope="col">More</th>
         </tr>
       </thead>
       <tbody>
-        {translations.map(t => {
+        {translations.map(r => {
             return (
-              <tr key={t.id}>
-                <td>{t.name}</td>
-                <td>{excerpt(t.biography)}</td>
+              <tr key={r.id}>
+                <td>{r.name}</td>
+                <td>{excerpt(r.biography)}</td>
                 <td>
                   {" "}
                   <Link
                     to={{
-                      pathname: `/translations/${t.id}`,
+                      pathname: `/translations/${r.id}`,
                       state: {
-                        translation: t,
+                        translation: r,
                         people: people
                       }
                     }}

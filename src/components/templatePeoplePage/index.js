@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import PeopleHeader from '../peopleheader'
 import "./peoplepage.css";
 
@@ -9,7 +8,6 @@ const TemplatePeoplePage = ({ people, children }) => {
       <PeopleHeader people={people} />
       <div className="row">
         <div className="col-3">
-        <Link to={`/people/${people.id}`}>
           <img
             src={
                 people.profile_path
@@ -17,9 +15,8 @@ const TemplatePeoplePage = ({ people, children }) => {
                 : "./film-poster-placeholder.png"
             }
             className="people"
-            alt={people.id}
+            alt={people.name}
           />
-           </Link>
         </div>
         <div className="col-9">{children}</div>
       </div>

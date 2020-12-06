@@ -1,31 +1,16 @@
 import React, { useState } from "react";
-import Header from "../headerMovieList";
+import Header from "../peopleheaderList";
 import PeopleList from "../peopleList";
-import FilterControls from "../filterControls";
 
-const PeopleListPageTemplate = ({movies, title, buttonHandler}) => {
-  const [nameFilter, setNameFilter] = useState("");
-  const [genreFilter, setGenreFilter] = useState("0");
-  const genre = Number(genreFilter)
-  let displayedPeoples = people
+const PeopleListPageTemplate = ({peoples, name, buttonHandler}) => {
+  const [nameFilter] = useState("");
+  let displayedPeoples = peoples
     .filter(m => {
-      return m.title.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-    })
-    .filter(m => {
-      return  genre > 0
-        ? m.genre_ids.includes(Number(genreFilter))
-        : true;
+      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
     });
-
-  const handleChange = (type, value) => {
-    if (type === "name") setNameFilter(value);
-    else setGenreFilter(value);
-  };
-
   return (
     <>
-      <Header title={title} numMovies={displayedMovies.length} />
-      <FilterControls onUserInput={handleChange} numMovies={displayedMovies.length}/>
+      <Header name={name} numPeoples={displayedPeoples.length} />
       <PeopleList
         buttonHandler={buttonHandler}
         peoples={displayedPeoples}

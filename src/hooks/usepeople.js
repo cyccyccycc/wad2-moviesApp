@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import {getpeopledetail} from '../api/tmdb-api'
 
 const usePeople = id => {
-  const [person, setPerson] = useState(null);
+  const [people, setPeople] = useState(null);
   useEffect(() => {
-    getpeopledetail(id).then(person => {
-      setPerson(person);
+    getpeopledetail(id).then(people => {
+      setPeople(people);
     });
   }, [id]);
-  return [person, setPerson];
+  return [people, setPeople];
 };
 
 export default usePeople

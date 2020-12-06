@@ -44,7 +44,7 @@ export const getMovies = () => {
   };
 
 
-  export const getpeople = () => {
+  export const getpeoples = () => {
     return fetch(
       `https://api.themoviedb.org/3/person/popular?api_key=${process.env.REACT_APP_TMDB_KEY}&language=zh-CN&page=1`
     )
@@ -55,16 +55,13 @@ export const getMovies = () => {
   
   export const getpeopledetail = id => {
     return fetch(
-      `https://api.themoviedb.org/3/person/${id}??api_key=${process.env.REACT_APP_TMDB_KEY}`
-    )
-    .then(res => res.json())
-    .then(json => json.results);
+      `https://api.themoviedb.org/3/person/${id}?api_key=${process.env.REACT_APP_TMDB_KEY}`
+    ).then(res => res.json());
   };
 
   export const getPeopleTranslations = id => {
     return fetch(
-      `
-      https://api.themoviedb.org/3/person/${id}/translations?api_key=${process.env.REACT_APP_TMDB_KEY}`
+      `https://api.themoviedb.org/3/person/${id}/translations?api_key=${process.env.REACT_APP_TMDB_KEY}`
     )
       .then(res => res.json())
       .then(json => json.results);

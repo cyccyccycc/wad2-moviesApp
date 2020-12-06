@@ -1,35 +1,33 @@
-import React, {useState, useEffect } from "react";
-import Header from "../components/peopleheaderList";
-import PeopleList from "../components/peopleList";
-import { getpeople } from "../api/tmdb-api";
+import React, { useState, useEffect } from "react";
 import StubAPI from "../api/stubAPIpeople";
+import PageTemplate from '../components/templatepeopleListPage'
+import { getpeoples } from "../api/tmdb-api";
 
-const PeoplePage = () => {
-  const [nameFilter] = useState("");       // NEW
+const PeopleListPage = () => {
   const [peoples, setPeoples] = useState([]);
   useEffect(() => {
-    getpeople().then(peoples => {
+    getpeoples().then(peoples => {
       setPeoples(peoples);
     });
   }, []);
-  let displayedPeoples = peoples
-    .filter(m => {
-      return m.name.toLowerCase().search(nameFilter.toLowerCase()) !== -1;
-    });
 
-    const addFavorites = peopleId => {
-      const index = peoples.map(m => m.id).indexOf(peopleId)
-      StubAPI.add(peoples[index])
-      const updatedList = [...peoples]
-      updatedList.splice(index, 1)
-      setPeoples(updatedList)  
-    }
+  const addFavorites = peopleId => {
+    setPeoples(peoples => {
+      const index = peoples.map(m => m.id).indexOf(peopleId);
+      StubAPI.add(peoples[index]);
+      let newPeoplesState = [...peoples]
+      newPeoplesState.splice(index, 1);
+      return newPeoplesState;
+    });
+  };
+
   return (
-    <>
-      <Header numPeoples={displayedPeoples.length} />
-      <PeopleList peoples={displayedPeoples}
-        buttonHandler={addFavorites} />
-    </>
+      <PageTemplate
+        title='NO People'
+        peoples={peoples}
+        buttonHandler={addFavorites}
+      />
   );
-}
-export default PeoplePage;
+};
+
+export default PeopleListPage;
