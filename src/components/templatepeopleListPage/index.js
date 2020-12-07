@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Header from "../peopleheaderList";
 import PeopleList from "../peopleList";
 
-const PeopleListPageTemplate = ({peoples, name, buttonHandler}) => {
+const PeopleListPageTemplate = ({ peoples, name, action }) => { 
   const [nameFilter] = useState("");
   let displayedPeoples = peoples
     .filter(m => {
@@ -12,9 +12,9 @@ const PeopleListPageTemplate = ({peoples, name, buttonHandler}) => {
     <>
       <Header numPeoples={displayedPeoples.length} />
       <PeopleList
-        buttonHandler={buttonHandler}
-        peoples={displayedPeoples}
-      ></PeopleList>
+       action={action}
+       peoples={displayedPeoples}
+    />
     </>
   );
 };

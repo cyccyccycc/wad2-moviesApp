@@ -1,15 +1,18 @@
 import React, { useContext } from "react";
 import PageTemplate from '../components/templatepeopleListPage'
 import {PeoplesContext} from '../contexts/peoplesContext'
+import AddFavoritesButton from '../components/buttons/addFavorites'
 
 const PeopleListPage = () => {
-  const context = useContext(PeoplesContext) 
+  const context = useContext(PeoplesContext);
 
   return (
       <PageTemplate 
-        title='No. people'
+        title='No. People'
         peoples={context.peoples}
-        buttonHandler={context.addFavorites}
+        action={(people) => {
+          return <AddFavoritesButton people={people} /> 
+        }}
       />
   );
 };

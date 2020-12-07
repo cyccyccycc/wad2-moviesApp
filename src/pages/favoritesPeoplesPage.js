@@ -1,15 +1,15 @@
 import React from "react";
 import StubAPI from "../api/stubAPIpeople";
 import PageTemplate from "../components/templatepeopleListPage";
+import AddBlessingButton from '../components/buttons/addBlessing'
 
 const FavoritePeoplesPage = props => {
-  const toDo = () => true;
 
   return (
     <PageTemplate
       peoples={StubAPI.getAll()}
       title={"Favorite People"}
-      buttonHandler={toDo}
+      action={people => <AddBlessingButton people={people} />}
     />
   );
 };

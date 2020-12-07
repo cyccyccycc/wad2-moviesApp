@@ -1,14 +1,11 @@
 import React from "react";
-import "./peoplecard.css";
 import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./peoplecard.css";
 import "../../globals/fontawesome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const peopleCard = ({people}) => {
-  const handleAddFavorites = e => {
-    e.preventDefault()
-    people.buttonHandler(people.id)
-  }
+const PeopleCard = ({people, action}) => {
+
   return (
     <div className="col-sm-3">
       <div className="card  bg-white">
@@ -22,29 +19,24 @@ const peopleCard = ({people}) => {
               : "./film-poster-placeholder.png"
           }
         />
-         </Link>
+        </Link>
         <div className="card-body">
           <h4 className="card-title ">{people.name}</h4>
-        
           <p>
-            <FontAwesomeIcon icon={["fas", "star"]} />
+            <FontAwesomeIcon icon={["fas", "calendar"]} />
             <span> {people.name}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
             <span> {people.popularity}</span>
           </p>
-          <div className="card-footer">
-          <button type="button" className="btn w-100 btn-primary"
-                onClick={handleAddFavorites}
-                >
-            Add to Favorites
-          </button>
         </div>
+        <div className="card-footer">
+           {action(people)}
         </div>
       </div>
     </div>
   );
 };
 
-export default peopleCard ;
+export default PeopleCard;
