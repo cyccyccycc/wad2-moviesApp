@@ -10,7 +10,7 @@ const PeopleListPageTemplate = ({peoples, name, buttonHandler}) => {
     });
   return (
     <>
-      <Header name={name} numPeoples={displayedPeoples.length} />
+      <Header numPeoples={displayedPeoples.length} />
       <PeopleList
         buttonHandler={buttonHandler}
         peoples={displayedPeoples}
