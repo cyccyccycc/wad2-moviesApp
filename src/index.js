@@ -18,7 +18,7 @@ import AddMovieReviewPage from './pages/addMovieReviewPage';
 import peoplePage from './pages/peoplePage';
 import FavoritePeoplesPage from './pages/favoritesPeoplesPage';
 import AddPeopleBlessingPage from './pages/addPeopleBlessingPage';
-
+import SimilarMoviePage from './pages/similarmoviesPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -39,6 +39,7 @@ const App = () => {
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/peoples/:id" component={PeoplePage} />
+          <Route path="/similarmovies/:id" component={SimilarMoviePage} />
           <Route exact path="/blessings/form" component={AddPeopleBlessingPage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
