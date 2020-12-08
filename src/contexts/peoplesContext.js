@@ -14,7 +14,13 @@ const reducer = (state, action) => {
     case "load":
       return { peoples: action.payload.peoples };
     case "add-blessing":
-      // Completed in next section
+        return {
+          peoples: state.peoples.map((n) =>
+            n.id === action.payload.people.id
+              ? { ...n, blessing: action.payload.blessing }
+              : n
+          ),
+        };
       break;
     default:
       return state;
@@ -30,7 +36,7 @@ const PeoplesContextProvider = (props) => {
   };
 
   const addBlessing = (people, blessing) => {
-     // Completed in next section
+    dispatch({ type: "add-blessing", payload: { people, blessing } });
   };
   useEffect(() => {
     getpeoples().then((peoples) => {

@@ -16,7 +16,8 @@ import PeoplesContextProvider from "./contexts/peoplesContext";
 import GenresContextProvider from "./contexts/genresContext";
 import AddMovieReviewPage from './pages/addMovieReviewPage';
 import peoplePage from './pages/peoplePage';
-import FavoritePeoplesPage from './pages/favoritesPeoplesPage'
+import FavoritePeoplesPage from './pages/favoritesPeoplesPage';
+import AddPeopleBlessingPage from './pages/addPeopleBlessingPage';
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
           <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
           <Route path="/movies/:id" component={MoviePage} />
           <Route path="/peoples/:id" component={PeoplePage} />
+          <Route exact path="/blessings/form" component={AddPeopleBlessingPage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
         </Switch>

@@ -1,14 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const AddBlessingButton = () => {
+const BlessingButton = ({ people }) => {
   return (
-    <button
-      type="button"
-      className="btn w-100 btn-primary"
+    <Link
+      className="btn w-100 btn-primary "
+      to={{
+        pathname: `/blessings/form`,
+        state: {
+          people: people
+        }
+      }}
     >
-      Write a Review
-    </button>
+      Write a Blessing
+    </Link>
   );
 };
 
-export default AddBlessingButton;
+export default BlessingButton;
