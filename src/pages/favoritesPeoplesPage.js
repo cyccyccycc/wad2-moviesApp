@@ -5,12 +5,12 @@ import {PeoplesContext} from '../contexts/peoplesContext'
 
 const FavoritePeoplesPage = props => {
   const context = useContext(PeoplesContext);
-  const favorites = context.peoples.filter( m => m.favorite )
+  const favorites = context.peoples.filter( n => n.favorite )
   return (
     <PeopleListPageTemplate
       peoples={favorites}
-      title={"Favorite Peoples"}
-      action={people=> <AddBlessingButton people={people} />}
+      title={"Favorite People"}
+      action={people => <AddBlessingButton people={people} />}
     />
   );
 };

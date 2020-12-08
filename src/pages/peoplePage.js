@@ -5,19 +5,18 @@ import AddFavoritesButton from '../components/buttons/addFavorites'
 
 const PeopleListPage = () => {
   const context = useContext(PeoplesContext);
-  const peoples = context.peoples.filter((m) => {  
-    return !("favorite" in m);
+  const peoples = context.peoples.filter((n) => {
+    return !("favorite" in n);
   });
 
   return (
     <PageTemplate
       title="No. People"
-      peoples={peoples}  /* Changed */
+      peoples={peoples} 
       action={(people) => {
         return <AddFavoritesButton people={people} />;
       }}
     />
   );
 };
-
 export default PeopleListPage;
