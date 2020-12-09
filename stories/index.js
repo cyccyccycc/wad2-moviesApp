@@ -151,6 +151,11 @@ const peoplesample1 = {
   "imdb_id": "nm0000093",
   "homepage": null
 };
+
+
+storiesOf("peopledetailsPage/PeopleDetails", module).add("default", () => (
+  <PeopleDetails people={peoplesample1} />
+));
 storiesOf("peoplePage/peoplecard", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
@@ -165,7 +170,7 @@ storiesOf("peoplePage/peoplecard", module)
     const sampleNoProfile = { ...sample, profile_path: undefined };
     return (
       <PeopleCard
-        people={sampleNoPoster}
+        people={sampleNoProfile}
         action={people => (
           <button className="btn w-100 btn-primary">Test</button>
         )}
@@ -193,9 +198,7 @@ storiesOf("peoplePage/peoplecard", module)
       />
     );
   });
-  storiesOf("peopledetailsPage/PeopleDetails", module).add("default", () => (
-    <PeopleDetails people={peoplesample1} />
-  ));
+
   storiesOf("People Details Page/PeopleHeader", module)
   .addDecorator(story => (
     <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
