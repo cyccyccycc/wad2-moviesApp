@@ -11,7 +11,11 @@ import AddFavoriteButton from "../src/components/buttons/addToFavorites";
 import { MemoryRouter } from "react-router";
 import GenresContextProvider from "../src/contexts/genresContext";
 import { action } from "@storybook/addon-actions";
-
+import PeopleCard from "../src/components/peoplecard";
+import PeopleHeaderList from "../src/components/peopleheaderList";
+import PeopleList from "../src/components/peopleList";
+import PeopleDetails from "../src/components/peopledetails";
+import PeopleHeader from "../src/components/peopleheader";
 const sample = {
   adult: false,
   backdrop_path: "/5Iw7zQTHVRBOYpA0V6z0yypOPZh.jpg",
@@ -92,6 +96,114 @@ const sample = {
   vote_average: 7,
   vote_count: 9692
 };
+const peoplesample = {
+  "profile_path": "/z3sLuRKP7hQVrvSTsqdLjGSldwG.jpg",
+      "adult": false,
+      "id": 28782,
+      "known_for": [
+        {
+          "poster_path": "/hE24GYddaxB9MVZl1CaiI86M3kp.jpg",
+          "adult": false,
+          "overview": "A cryptic message from Bond’s past sends him on a trail to uncover a sinister organization. While M battles political forces to keep the secret service alive, Bond peels back the layers of deceit to reveal the terrible truth behind SPECTRE.",
+          "release_date": "2015-10-26",
+          "original_title": "Spectre",
+          "genre_ids": [
+            28,
+            12,
+            80
+          ],
+          "id": 206647,
+          "media_type": "movie",
+          "original_language": "en",
+          "title": "Spectre",
+          "backdrop_path": "/wVTYlkKPKrljJfugXN7UlLNjtuJ.jpg",
+          "popularity": 7.090211,
+          "vote_count": 2956,
+          "video": false,
+          "vote_average": 6.2
+        },
+      ]
+};
+const peoplesample1 = {
+  "birthday": "1963-12-18",
+  "known_for_department": "Acting",
+  "deathday": null,
+  "id": 287,
+  "name": "Brad Pitt",
+  "also_known_as": [
+    "برد پیت",
+    "Бред Питт",
+    "Бред Пітт",
+    "Buratto Pitto",
+    "Брэд Питт",
+    "畢·彼特",
+    "ブラッド・ピット",
+    "브래드 피트",
+    "براد بيت",
+    "แบรด พิตต์"
+  ],
+  "gender": 2,
+  "biography": "William Bradley \"Brad\" Pitt (born December 18, 1963) is an American actor and film producer. Pitt has received two Academy Award nominations and four Golden Globe Award nominations, winning one. He has been described as one of the world's most attractive men, a label for which he has received substantial media attention. Pitt began his acting career with television guest appearances, including a role on the CBS prime-time soap opera Dallas in 1987. He later gained recognition as the cowboy hitchhiker who seduces Geena Davis's character in the 1991 road movie Thelma & Louise. Pitt's first leading roles in big-budget productions came with A River Runs Through It (1992) and Interview with the Vampire (1994). He was cast opposite Anthony Hopkins in the 1994 drama Legends of the Fall, which earned him his first Golden Globe nomination. In 1995 he gave critically acclaimed performances in the crime thriller Seven and the science fiction film 12 Monkeys, the latter securing him a Golden Globe Award for Best Supporting Actor and an Academy Award nomination.\n\nFour years later, in 1999, Pitt starred in the cult hit Fight Club. He then starred in the major international hit as Rusty Ryan in Ocean's Eleven (2001) and its sequels, Ocean's Twelve (2004) and Ocean's Thirteen (2007). His greatest commercial successes have been Troy (2004) and Mr. & Mrs. Smith (2005).\n\nPitt received his second Academy Award nomination for his title role performance in the 2008 film The Curious Case of Benjamin Button. Following a high-profile relationship with actress Gwyneth Paltrow, Pitt was married to actress Jennifer Aniston for five years. Pitt lives with actress Angelina Jolie in a relationship that has generated wide publicity. He and Jolie have six children—Maddox, Pax, Zahara, Shiloh, Knox, and Vivienne.\n\nSince beginning his relationship with Jolie, he has become increasingly involved in social issues both in the United States and internationally. Pitt owns a production company named Plan B Entertainment, whose productions include the 2007 Academy Award winning Best Picture, The Departed.",
+  "popularity": 10.647,
+  "place_of_birth": "Shawnee, Oklahoma, USA",
+  "profile_path": "/kU3B75TyRiCgE270EyZnHjfivoq.jpg",
+  "adult": false,
+  "imdb_id": "nm0000093",
+  "homepage": null
+};
+storiesOf("peoplePage/peoplecard", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => (
+    <PeopleCard
+      people={peoplesample}
+      action={people => <button className="btn w-100 btn-primary">Test</button>}
+    />
+  ))
+  .add("exception", () => {
+    const sampleNoProfile = { ...sample, profile_path: undefined };
+    return (
+      <PeopleCard
+        people={sampleNoPoster}
+        action={people => (
+          <button className="btn w-100 btn-primary">Test</button>
+        )}
+      />
+    );
+  });
+
+  storiesOf("peoplePage/Header", module).add("default", () => (
+    <PeopleHeaderList title="All People" numPeoples={1} />
+  ));
+  
+
+  storiesOf("peoplePage/PeopleList", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => {
+    const peoples = [peoplesample, peoplesample, peoplesample];
+    return (
+      <PeopleList
+        peoples={peoples}
+        action={people => (
+          <button className="btn w-100 btn-primary">Test</button>
+        )}
+      />
+    );
+  });
+  storiesOf("peopledetailsPage/PeopleDetails", module).add("default", () => (
+    <PeopleDetails people={peoplesample1} />
+  ));
+  storiesOf("People Details Page/PeopleHeader", module)
+  .addDecorator(story => (
+    <MemoryRouter initialEntries={["/"]}>{story()}</MemoryRouter>
+  ))
+  .add("default", () => <PeopleHeader people={peoplesample1} />);
+
+
+
 
 storiesOf("Home Page/MovieCard", module)
   .addDecorator(story => (

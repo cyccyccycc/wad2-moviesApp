@@ -4,3 +4,4 @@ module.exports = {
   module.exports = {
     addons: ['@storybook/addon-actions/register']
   }
+  
