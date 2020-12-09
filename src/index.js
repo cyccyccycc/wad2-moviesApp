@@ -19,6 +19,7 @@ import peoplePage from './pages/peoplePage';
 import FavoritePeoplesPage from './pages/favoritesPeoplesPage';
 import AddPeopleBlessingPage from './pages/addPeopleBlessingPage';
 import SimilarMoviePage from './pages/similarmoviesPage'
+
 const App = () => {
   return (
     <BrowserRouter>
