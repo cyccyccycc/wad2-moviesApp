@@ -5,7 +5,7 @@
 const filterByName = (peopleList, string) =>
   peopleList.filter((m) => m.title.toLowerCase().search(string) !== -1);
 
-describe("Home Page ", () => {
+describe("People Page ", () => {
   before(() => {
     cy.request(
       `https://api.themoviedb.org/3/person/popular?api_key=${Cypress.env(
@@ -18,7 +18,8 @@ describe("Home Page ", () => {
       })
   })
   beforeEach(() => {
-    cy.visit("/people")
+    cy.visit("/");
+    cy.get("nav").find("li").eq(4).find("a").click();
   });
 
   describe("Base tests", () => {

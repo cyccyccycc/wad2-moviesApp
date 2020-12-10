@@ -27,7 +27,8 @@ describe("Navigation", () => {
 
   describe("From the people page", () => {
     beforeEach(() => {
-      cy.visit("people/");
+      cy.visit("/");
+      cy.get("nav").find("li").eq(4).find("a").click();
     });
     it("should navigate to the people details page and change browser URL", () => {
       cy.get(".card").eq(1).find("img").click();
@@ -49,13 +50,15 @@ describe("Navigation", () => {
 
   describe("From the people Details page ", () => {
     beforeEach(() => {
-      cy.visit(`/peoplees/${peopleId}`);
+        cy.visit('/');
+        cy.get("nav").find("li").eq(4).find("a").click();
     });
 
   });
   describe("From the Favorite People page", () => {
     beforeEach(() => {
-      cy.visit("people/");
+      cy.visit("/");
+      cy.get("nav").find("li").eq(4).find("a").click();
       cy.get(".card").eq(0).find("button").click();
       cy.get("nav").find("li").eq(5).find("a").click();
     });
@@ -67,7 +70,8 @@ describe("Navigation", () => {
   });
   describe("The Go Back button", () => {
     beforeEach(() => {
-      cy.visit("people/");
+      cy.visit("/");
+      cy.get("nav").find("li").eq(4).find("a").click();
     });
     it("should navigate from people page to people details and back", () => {
       cy.get(".card").eq(1).find("img").click();
