@@ -1,19 +1,18 @@
 
-  let peoples;    // List of movies from TMDB
+  let peoples;
 
-// Utility functions
+
 const filterByName = (peopleList, string) =>
   peopleList.filter((m) => m.title.toLowerCase().search(string) !== -1);
 
 describe("Home Page ", () => {
   before(() => {
-    // Get movies from TMDB and store in movies variable.
     cy.request(
       `https://api.themoviedb.org/3/person/popular?api_key=${Cypress.env(
         "TMDB_KEY"
       )}&language=en-US&include_adult=false&include_video=false&page=1`
     )
-      .its("body")    // Take the body of HTTP response from TMDB
+      .its("body") 
       .then((response) => {
         peoples = response.results
       })
