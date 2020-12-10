@@ -32,34 +32,10 @@ export default ({ people }) => {
       </ul>
       <ul className="list-group list-group-horizontal">
         <li key="pch" className="list-group-item list-group-item-dark">
-        place_of_birth
-        </li>
-        <li key="kno" className="list-group-item ">
-          {people.place_of_birth}
-        </li>
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="pch" className="list-group-item list-group-item-dark">
-        homepage
-        </li>
-        <li key="kno" className="list-group-item ">
-          {people.homepage}
-        </li>
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="pch" className="list-group-item list-group-item-dark">
         known_for_department
         </li>
         <li key="kno" className="list-group-item ">
           {people.known_for_department}
-        </li>
-      </ul>
-      <ul className="list-group list-group-horizontal">
-        <li key="pch" className="list-group-item list-group-item-dark">
-        deathday
-        </li>
-        <li key="kno" className="list-group-item ">
-          {people.deathday}
         </li>
       </ul>
     </>

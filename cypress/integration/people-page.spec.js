@@ -28,17 +28,4 @@ describe("Home Page ", () => {
         cy.get(".badge").contains(20);
       });
   });
-  //describe("Filtering", () => {
-   // it("should only display movies with the specified title substring", () => {
-   //   let searchString = "m";
-     // let matchingMovies = filterByTitle(movies, searchString);
-      //cy.get("input").clear().type(searchString); // Enter m in text box
-    //  cy.get(".card").should("have.length", matchingMovies.length);
-      // Do a second test for certainty!
-     // searchString = "o";
-     // matchingMovies = filterByTitle(movies, searchString);
-      //cy.get("input").clear().type(searchString)
-     // cy.get(".card").should("have.length", matchingMovies.length);
-    //});
-  //});
 });
