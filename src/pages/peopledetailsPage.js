@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import PeopleDetails from "../components/peopledetails";
 import PageTemplate from "../components/templatePeoplePage";
-import usePeople from "../hooks/usePeople";
+import usePeople from "../hooks/usepeople";
 const PeoplePage = props => {
   const { id } = props.match.params;
   const [people] = usePeople(id) 
