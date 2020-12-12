@@ -20,6 +20,7 @@ import FavoritePeoplesPage from './pages/favoritesPeoplesPage';
 import AddPeopleBlessingPage from './pages/addPeopleBlessingPage';
 import SimilarMoviePage from './pages/similarmoviesPage'
 import Signup from './pages/SignupPage'
+import Login from './pages/LoginPage'
 const App = () => {
   return (
     <BrowserRouter>
@@ -34,6 +35,7 @@ const App = () => {
         <Route exact path="/peoples/favorites" component={FavoritePeoplesPage} />
           <Route path="/reviews/:id" component={MovieReviewPage} />
           <Route path="/signup" component={Signup} />
+          <Route path="/Login" component={Login} />
           <Route path="/people" component={peoplePage} />
           <Route path="/translations/:id" component={PeopleTranslationPage} />
           <Route path="/movies/upcoming" component={UpcomingMoviePage} />
