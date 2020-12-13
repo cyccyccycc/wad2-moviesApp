@@ -32,7 +32,7 @@ let password;
 
         }); */
     
-        it("should log out when user click the logout button ", () => {
+/*         it("should log out when user click the logout button ", () => {
           cy.visit("/");
           cy.get('nav').find("li").eq(7).click();
           cy.get('input').eq(0).type('cyccyccyc@cyc.com');
@@ -42,5 +42,5 @@ let password;
           cy.get('button').click();
           cy.get('nav').find("li").eq(8).click();
           cy.url().should("include", '/');
-    });
+    }); */
     });
