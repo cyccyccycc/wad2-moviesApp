@@ -10,7 +10,7 @@ describe("People Details Page", () => {
       )
       .its("body")
       .then((response) => {
-        return response.results[9].id;
+        return response.results[3].id;
       })
       .then((arbitraryPeopleIdignored) => {
         peopleId = arbitraryPeopleIdignored
@@ -30,7 +30,7 @@ describe("People Details Page", () => {
   beforeEach(() => {
     cy.visit('/');
     cy.get("nav").find("li").eq(4).find("a").click();
-    cy.get(".card").eq(9).find("img").click();
+    cy.get(".card").eq(3).find("img").click();
   });
 
   it("should display People name in the page header", () => {
@@ -46,12 +46,6 @@ describe("People Details Page", () => {
         cy.get("li").eq(0).contains("place_of_birth");
         cy.get("li").eq(0).next().contains(people.place_of_birth);
       });
-      cy.get("ul")
-      .eq(2)
-      .within(() => {
-        cy.get("li").eq(0).contains("biography");
-        cy.get("li").eq(0).next().contains(people.biography);
-    });
     cy.get("ul")
       .eq(3)
       .within(() => {

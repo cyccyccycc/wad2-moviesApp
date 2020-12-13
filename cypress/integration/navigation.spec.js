@@ -29,6 +29,11 @@ describe("Navigation", () => {
   describe("From the home page", () => {
     beforeEach(() => {
       cy.visit("/");
+      cy.get('nav').find("li").eq(7).click();
+      cy.get('input').eq(0).type('cyccyccyc@cyc.com');
+      cy.get('input').eq(1).type('cyccyc');
+      cy.get('button').click();
+      cy.visit("/");
     });
     it("should navigate to the movie details page and change browser URL", () => {
       cy.get(".card").eq(0).find("img").click();

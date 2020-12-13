@@ -46,9 +46,9 @@ const App = () => {
           <Route path="/movies/upcoming" component={UpcomingMoviePage} />
           <Route path="/movies/nowplaying" component={NowPlayingPage} />
           <PrivateRoute exact path="/movies/favorites" component={FavoriteMoviesPage} />
-          <PrivateRoute path="/movies/:id" component={MoviePage} />
-          <PrivateRoute path="/peoples/:id" component={PeoplePage} />
-          <PrivateRoute path="/similarmovies/:id" component={SimilarMoviePage} />
+          <Route path="/movies/:id" component={MoviePage} />
+          <Route path="/peoples/:id" component={PeoplePage} />
+          <Route path="/similarmovies/:id" component={SimilarMoviePage} />
           <Route exact path="/blessings/form" component={AddPeopleBlessingPage} />
           <Route path="/" component={HomePage} />
           <Redirect from="*" to="/" />
