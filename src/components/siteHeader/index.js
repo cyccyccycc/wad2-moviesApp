@@ -67,6 +67,11 @@ const SiteHeader = () => {
               Login
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link text-white" to="/logout">
+              Logout
+            </Link>
+          </li>
         </ul>
       </nav>
     </nav>

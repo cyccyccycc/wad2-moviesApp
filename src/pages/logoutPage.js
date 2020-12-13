@@ -1,9 +1,9 @@
 import React from "react"
- import Login from '../login'
+ import Logout from '../logout'
 function functiona(){
 return(
 
-  <Login/>
+  <Logout/>
 
 )
 }
