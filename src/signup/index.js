@@ -55,7 +55,7 @@ async function handleSubmit(e){
 </Card.Body>
     </Card>
     <div classname="w-100 text-center mt-2">
-        Already have a account?<Link to="/Login">Login</Link>
+        Already have a account?<Link id='5' to="/Login">Login</Link>
     </div>
         </>
     )

@@ -45,7 +45,7 @@ async function handleSubmit(e){
 </Card.Body>
     </Card>
     <div classname="w-100 text-center mt-2">
-        Need a account?<Link to="/signup">Signup</Link>
+        Need a account?<Link id='6' to="/signup">Signup</Link>
     </div>
         </>
     )
