@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import {PeoplesContext} from "../../contexts/peoplesContext";
-
+import './button.css'
 const AddFavoriteButton = ({ people }) => {
   const context = useContext(PeoplesContext);
 
@@ -11,7 +11,7 @@ const AddFavoriteButton = ({ people }) => {
   return (
     <button
       type="button"
-      className="btn w-100 btn-primary"
+      class="css_bt_class"
       onClick={handleAddFavorite}
     >
       Add people to Favorites

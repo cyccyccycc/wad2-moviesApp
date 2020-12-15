@@ -24,11 +24,11 @@ const PeopleCard = ({people, action}) => {
           <h4 className="card-title ">{people.name}</h4>
           <p>
             <FontAwesomeIcon icon={["fas", "calendar"]} />
-            <span> {people.name}</span>
+            <span className="card-word "> {people.name}</span>
           </p>
           <p>
             <FontAwesomeIcon icon={["fas", "star"]} />
-            <span> {people.popularity}</span>
+            <span className="card-word "> {people.popularity}</span>
           </p>
         </div>
         <div className="card-footer">

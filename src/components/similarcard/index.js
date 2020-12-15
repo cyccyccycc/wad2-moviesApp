@@ -30,9 +30,7 @@ const SimilarCard = props => {
         </div>
         <div className="card-footer">
         <Link to={`/similarmovies/${props.movie.id}`}>
-          <button type="button" className="btn w-100 btn-primary">
-           Get the similar movies
-          </button>
+        <a href={`/similarmovies/${props.movie.id}`} class="css_btn_class">Get the similar movies</a>
           </Link>
         </div>
       </div>

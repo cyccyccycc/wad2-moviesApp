@@ -3,6 +3,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 80%;
+    
   }
 
 p {
@@ -16,5 +17,19 @@ p {
 }
 
 .card-title {
-  text-align: center
+  text-align: center;
+  font-family: Tahoma, Geneva, sans-serif;
+color: #F0BF0E;
+font-weight: bold;
+font-style: italic;
 }
+
+
+
+.card-word{
+  font-family: "palatino linotype", palatino, serif;
+color: #0EA1F0;
+font-weight: bold;
+font-style: italic;
+}
+
