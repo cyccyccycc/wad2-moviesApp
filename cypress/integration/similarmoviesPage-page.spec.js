@@ -33,13 +33,13 @@ describe("simliar movies Pages", () => {
       });
 
   it("should display SImilar Movies in the page header", () => {
-    cy.get(".card").eq(0).find("button").click();
+    cy.get("#0").click();
     cy.get("h2").contains("Here are similar Movies");
     cy.get(".badge").contains(20);
 
   });
   it("should display the movie's similar movies", () => {
-    cy.get(".card").eq(0).find("button").click();
+    cy.get("#0").click();
     cy.url().should("include", '/similarmovies');
   });
 

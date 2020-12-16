@@ -30,10 +30,11 @@
           cy.get(".badge").contains(1);
         });
         describe("write blessing test", () => {
-            it("turn to another page for user to write belssing", () => {
+/*             it("turn to another page for user to write belssing", () => {
+              cy.get("nav").find("li").eq(7).find("a").click();
               cy.get("#99").click();
                 cy.url().should("include", 'blessings/form');
-              });
+              }); */
 /*               it("should memory the words writen by user if all conditons are right", () => {
                 cy.get("#99").click();
                 cy.get("input").eq(0).type('useruseruseruser');
