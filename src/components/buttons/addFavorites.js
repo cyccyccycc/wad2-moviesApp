@@ -10,6 +10,7 @@ const AddFavoriteButton = ({ people }) => {
   };
   return (
     <button
+     id = '10'
       type="button"
       class="css_bt_class"
       onClick={handleAddFavorite}

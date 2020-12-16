@@ -18,6 +18,7 @@ const BlessingForm = ({ people, history }) => {
       <h3>Add your belsssing</h3>
       <div className="form-group">
         <input
+          id='18'
           type="text"
           className="form-control"
           placeholder="Author"

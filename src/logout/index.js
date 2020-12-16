@@ -26,7 +26,7 @@ export default function Logout() {
      <strong>Email:</strong>{currentUser.email}
             </Card.Body>
         </Card>
-        <Button variant="link" onClick={handleLogout} >Log out</Button>
+        <Button id='91' variant="link" onClick={handleLogout} >Log out</Button>
         </>
     )
 }

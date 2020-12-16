@@ -7,7 +7,7 @@ let password;
       cy.get('nav').find("li").eq(7).click();
       cy.get('input').eq(0).type('cyccyccyc@cyc.com');
       cy.get('input').eq(1).type('cyccyc');
-      cy.get('button').contains('Login').click();
+      cy.get('#9').click();
     });
     it("should turn to the login Page if the user do not login and click the logout Link", () => {
         cy.get('nav').find("li").eq(8).click();

@@ -12,7 +12,9 @@ const BlessingButton = ({ people }) => {
         }
       }}
     >
+      <button id ='99'>
       Write a Blessing
+      </button>
     </Link>
   );
 };

@@ -3,7 +3,7 @@
 
 
 const filterByName = (peopleList, string) =>
-  peopleList.filter((m) => m.title.toLowerCase().search(string) !== -1);
+  peopleList.filter((m) => m.name.toLowerCase().search(string) !== -1);
 
 describe("People Page ", () => {
   before(() => {
@@ -28,4 +28,11 @@ describe("People Page ", () => {
         cy.get(".badge").contains(20);
       });
   });
+  describe("confirm people name" ,() => {
+    it("should display people with length in the head", () => {
+      const matchingPeoples = filterByName(peoples);
+      cy.get(".card").should("have.length", matchingPeoples.length);
+
+    });
+});
 });
