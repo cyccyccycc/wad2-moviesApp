@@ -207,7 +207,7 @@ Tests: cypress/integration/login-page.spec.js
 
 Tests: cypress/integration/peoplefavoritespageandaddblessing.spec.js 
 
-![][favoritepeople]
+![][favoritespeople]
 
 + Blessingform page - Shows the form for user to write his name and his words about one special actor, and he could click the 'Submit' button to record his words and name, or click the 'reset' button to delete his words and name.
 
