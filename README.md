@@ -76,10 +76,10 @@ REACT_APP_FIREBASE_APP_ID=1:1010593383964:web:d1bf499260aeebb50c01d9
 ![][login]
 >Shows the interface for user to log in the website, and you could use the button below to the signup page.
 
-![][favorites people]
+![][favoritespeople]
 >Shows the actor which has been added into this page by user.
 
-![][add blessing form]
+![][addblessingform]
 >Shows the form for user to write their name and words about one special actor, and you could use the 'submit' button to hand in your words to the website, and you could use the 'reset' button to delete your words.
 
 ## Routing.
@@ -97,22 +97,22 @@ REACT_APP_FIREBASE_APP_ID=1:1010593383964:web:d1bf499260aeebb50c01d9
 ### Data hyperlinking.
 
 
-![][Blessingform link]
+![][Blessingformlink]
 >Clicking the 'Write a Blessing' cause the display a form for user to write his own words.
 
-![][peopledetails link]
+![][peopledetailslink]
 >Clicking the a card cause the diaplay of that actor's details.
 
-![][login page link]
+![][loginpagelink]
 >Clicking the 'Login' cause the website turn to login page.
 
-![][peoplehomepage link]
+![][peoplehomepagelink]
 >Clicking the 'house' cause the display of the actor's homepage.
 
-![][signup page link]
+![][signuppagelink]
 >Clicking the 'Signup' cause the website turn to the signup page.
 
-![][similar movies link]
+![][similarmovieslink]
 >Clicking the 'Get the similar movies' cause the display of all similar movies related to this movie.
 
 
@@ -207,13 +207,13 @@ Tests: cypress/integration/login-page.spec.js
 
 Tests: cypress/integration/peoplefavoritespageandaddblessing.spec.js 
 
-![][favorites people]
+![][favoritepeople]
 
 + Blessingform page - Shows the form for user to write his name and his words about one special actor, and he could click the 'Submit' button to record his words and name, or click the 'reset' button to delete his words and name.
 
 Tests: cypress/integration/peoplefavoritespageandaddblessing.spec.js 
 
-![][add Blessing form]
+![][addBlessingform]
 
 ## Testing.
 
@@ -240,19 +240,19 @@ List reference material links (articles/blogs).
 ---------------------------------
 
 [similarmovies]: ./public/similarmovies.png
-[similar movies link]: ./public/similar movies link.png
+[similarmovieslink]: ./public/similarmovieslink.png
 [signup]: ./public/signup.png
-[signup page link]: ./public/signup page link.png
+[signuppagelink]: ./public/signuppagelink.png
 [people]: ./public/people.png
-[peoplehomepage link]: ./public/peoplehomepage link.png
+[peoplehomepagelink]: ./public/peoplehomepagelink.png
 [peopledetails]: ./public/peopledetails.png
-[peopledetails link]: ./public/peopledetails link.png
+[peopledetailslink]: ./public/peopledetailslink.png
 [Nowplayingmovies]: ./public/Nowplayingmovies.png
 [newstorybook]: ./public/newstorybook.png
 [Logout]: ./public/Logout.png
 [Login]: ./public/Login.png
-[login page link]: ./public/login page link.png
-[favorites people]: ./public/favorites people.png
-[add blessing form]: ./public/add blessing form.png
-[Blessingform link]: ./public/Blessingform link.png
+[loginpagelink]: ./public/loginpagelink.png
+[favoritespeople]: ./public/favoritespeople.png
+[addblessingform]: ./public/addblessingform.png
+[Blessingformlink]: ./public/Blessingformlink.png
 
