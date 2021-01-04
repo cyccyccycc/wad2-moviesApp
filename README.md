@@ -12,7 +12,7 @@ Name: YICHENG CAI
 
  + Feature 3 = I created a page where I can get actors. Each card has an actor's picture and basic information. By clicking on the actor's picture, I can enter another page to show the actor's details. Click the button below the card to add the actor to my favorite actor
 
- +Feayure 4 = I create the private route. When the user logs in the website and had already added some movies or actors to his favorites, the user can click the favorites page and he could use the button under the card body to writes some of his words about the movies or actors, and this words will be record there.
+ + Feayure 4 = I create the private route. When the user logs in the website and had already added some movies or actors to his favorites, the user can click the favorites page and he could use the button under the card body to writes some of his words about the movies or actors, and this words will be record there.
 
  + etc
 
@@ -67,7 +67,7 @@ REACT_APP_FIREBASE_APP_ID=1:1010593383964:web:d1bf499260aeebb50c01d9
 ![][peopledetails]
 >Shows the information about a special actor. 
 
-![][Nowplaying]
+![][Nowplayingmovies]
 >Shows the now playing movies and you could use button to get similar movies. 
 
 ![][logout]
